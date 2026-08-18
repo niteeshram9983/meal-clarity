@@ -34,7 +34,8 @@
    "BMI": 0.3907,
    "diabetes": 0.0801,
    "heart": 0.0791
-  }
+  },
+  "signalNote": "Test accuracy is close to the 25% random baseline and regression R2 is near zero, so this dataset shows weak predictive signal. Model output is shown as an educational data pattern only; the transparent rule engine remains the primary recommender."
  },
  "tree": {
   "leaf": false,
@@ -294,6 +295,73 @@
    "intercept": 92.8333,
    "mean": 89.0,
    "r2": 0.0007
+  }
+ },
+ "cohorts": {
+  "Diabetes": {
+   "n": 1019,
+   "calories": 2015,
+   "protein": 129,
+   "carbs": 244,
+   "fats": 89,
+   "planMix": {
+    "Low-Fat Diet": 0.28,
+    "Balanced Diet": 0.263,
+    "Low-Carb Diet": 0.229,
+    "High-Protein Diet": 0.229
+   }
+  },
+  "Heart Disease": {
+   "n": 749,
+   "calories": 2064,
+   "protein": 129,
+   "carbs": 243,
+   "fats": 91,
+   "planMix": {
+    "Low-Fat Diet": 0.266,
+    "High-Protein Diet": 0.259,
+    "Low-Carb Diet": 0.25,
+    "Balanced Diet": 0.226
+   }
+  },
+  "Hypertension": {
+   "n": 693,
+   "calories": 2045,
+   "protein": 129,
+   "carbs": 254,
+   "fats": 91,
+   "planMix": {
+    "Balanced Diet": 0.266,
+    "High-Protein Diet": 0.255,
+    "Low-Fat Diet": 0.241,
+    "Low-Carb Diet": 0.238
+   }
+  },
+  "None": {
+   "n": 2043,
+   "calories": 2066,
+   "protein": 129,
+   "carbs": 251,
+   "fats": 89,
+   "planMix": {
+    "Low-Fat Diet": 0.261,
+    "High-Protein Diet": 0.256,
+    "Balanced Diet": 0.245,
+    "Low-Carb Diet": 0.238
+   }
+  },
+  "Obesity": {
+   "n": 496,
+   "calories": 2005,
+   "protein": 131,
+   "carbs": 249,
+   "fats": 86,
+   "planMix": {
+    "High-Protein Diet": 0.26,
+    "Low-Fat Diet": 0.258,
+    "Balanced Diet": 0.258,
+    "Low-Carb Diet": 0.224
+   }
   }
  }
 }
