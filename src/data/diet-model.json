@@ -1,0 +1,367 @@
+{
+ "meta": {
+  "dataset": "Personalized_Diet_Recommendations.csv",
+  "rows": 5000,
+  "algorithm": "Decision tree (depth 4, min leaf 40) + per-target linear regressions",
+  "testAccuracy": 0.27,
+  "features": [
+   "Age",
+   "Height_cm",
+   "Weight_kg",
+   "BMI",
+   "diabetes",
+   "hypertension",
+   "heart",
+   "obesity",
+   "vegetarian",
+   "male"
+  ],
+  "classes": [
+   "Balanced Diet",
+   "High-Protein Diet",
+   "Low-Carb Diet",
+   "Low-Fat Diet"
+  ],
+  "classDistribution": {
+   "Low-Fat Diet": 1313,
+   "High-Protein Diet": 1255,
+   "Balanced Diet": 1250,
+   "Low-Carb Diet": 1182
+  },
+  "importances": {
+   "Age": 0.1088,
+   "Weight_kg": 0.3413,
+   "BMI": 0.3907,
+   "diabetes": 0.0801,
+   "heart": 0.0791
+  },
+  "signalNote": "Test accuracy is close to the 25% random baseline and regression R2 is near zero, so this dataset shows weak predictive signal. Model output is shown as an educational data pattern only; the transparent rule engine remains the primary recommender."
+ },
+ "tree": {
+  "leaf": false,
+  "feature": "BMI",
+  "threshold": 31.425,
+  "left": {
+   "leaf": false,
+   "feature": "BMI",
+   "threshold": 25.09,
+   "left": {
+    "leaf": false,
+    "feature": "BMI",
+    "threshold": 14.255,
+    "left": {
+     "leaf": true,
+     "probs": [
+      0.0976,
+      0.2195,
+      0.2439,
+      0.439
+     ],
+     "n": 41
+    },
+    "right": {
+     "leaf": false,
+     "feature": "Weight_kg",
+     "threshold": 61.5,
+     "left": {
+      "leaf": true,
+      "probs": [
+       0.2278,
+       0.2529,
+       0.2797,
+       0.2395
+      ],
+      "n": 597
+     },
+     "right": {
+      "leaf": true,
+      "probs": [
+       0.2339,
+       0.284,
+       0.222,
+       0.2601
+      ],
+      "n": 919
+     }
+    }
+   },
+   "right": {
+    "leaf": false,
+    "feature": "Age",
+    "threshold": 54.5,
+    "left": {
+     "leaf": false,
+     "feature": "Weight_kg",
+     "threshold": 108.5,
+     "left": {
+      "leaf": true,
+      "probs": [
+       0.3159,
+       0.2705,
+       0.199,
+       0.2147
+      ],
+      "n": 573
+     },
+     "right": {
+      "leaf": true,
+      "probs": [
+       0.2113,
+       0.2535,
+       0.3662,
+       0.169
+      ],
+      "n": 71
+     }
+    },
+    "right": {
+     "leaf": false,
+     "feature": "diabetes",
+     "threshold": 0.5,
+     "left": {
+      "leaf": true,
+      "probs": [
+       0.2351,
+       0.2173,
+       0.2679,
+       0.2798
+      ],
+      "n": 336
+     },
+     "right": {
+      "leaf": true,
+      "probs": [
+       0.3542,
+       0.1562,
+       0.3125,
+       0.1771
+      ],
+      "n": 96
+     }
+    }
+   }
+  },
+  "right": {
+   "leaf": false,
+   "feature": "BMI",
+   "threshold": 41.83,
+   "left": {
+    "leaf": false,
+    "feature": "Weight_kg",
+    "threshold": 117.5,
+    "left": {
+     "leaf": false,
+     "feature": "Weight_kg",
+     "threshold": 99.5,
+     "left": {
+      "leaf": true,
+      "probs": [
+       0.2154,
+       0.2549,
+       0.2391,
+       0.2905
+      ],
+      "n": 506
+     },
+     "right": {
+      "leaf": true,
+      "probs": [
+       0.2393,
+       0.1984,
+       0.214,
+       0.3482
+      ],
+      "n": 514
+     }
+    },
+    "right": {
+     "leaf": true,
+     "probs": [
+      0.3654,
+      0.25,
+      0.2115,
+      0.1731
+     ],
+     "n": 52
+    }
+   },
+   "right": {
+    "leaf": false,
+    "feature": "heart",
+    "threshold": 0.5,
+    "left": {
+     "leaf": false,
+     "feature": "Weight_kg",
+     "threshold": 115.5,
+     "left": {
+      "leaf": true,
+      "probs": [
+       0.3246,
+       0.2618,
+       0.2147,
+       0.199
+      ],
+      "n": 191
+     },
+     "right": {
+      "leaf": true,
+      "probs": [
+       0.2951,
+       0.2131,
+       0.1475,
+       0.3443
+      ],
+      "n": 61
+     }
+    },
+    "right": {
+     "leaf": true,
+     "probs": [
+      0.1163,
+      0.3488,
+      0.3023,
+      0.2326
+     ],
+     "n": 43
+    }
+   }
+  }
+ },
+ "regressions": {
+  "Recommended_Calories": {
+   "coef": {
+    "Age": 1.11355,
+    "Height_cm": 0.74892,
+    "Weight_kg": -1.48104,
+    "BMI": 4.86013,
+    "diabetes": -58.25531,
+    "hypertension": -22.30483,
+    "heart": 3.89201,
+    "obesity": -59.06528,
+    "vegetarian": -10.14448,
+    "male": -33.06681
+   },
+   "intercept": 1880.8908,
+   "mean": 2046.2,
+   "r2": -0.0051
+  },
+  "Recommended_Protein": {
+   "coef": {
+    "Age": -0.02807,
+    "Height_cm": 0.23116,
+    "Weight_kg": -0.21479,
+    "BMI": 0.73403,
+    "diabetes": -0.06055,
+    "hypertension": -1.22619,
+    "heart": 0.62834,
+    "obesity": 1.02466,
+    "vegetarian": 3.6313,
+    "male": 0.50713
+   },
+   "intercept": 86.4456,
+   "mean": 129.3,
+   "r2": -0.0023
+  },
+  "Recommended_Carbs": {
+   "coef": {
+    "Age": -0.15424,
+    "Height_cm": -0.49115,
+    "Weight_kg": 0.48856,
+    "BMI": -1.43246,
+    "diabetes": -7.51631,
+    "hypertension": 0.21664,
+    "heart": -7.88643,
+    "obesity": -1.40627,
+    "vegetarian": -4.02547,
+    "male": 0.47616
+   },
+   "intercept": 343.5225,
+   "mean": 248.3,
+   "r2": -0.0075
+  },
+  "Recommended_Fats": {
+   "coef": {
+    "Age": 0.04921,
+    "Height_cm": -0.0291,
+    "Weight_kg": -0.00856,
+    "BMI": -0.02506,
+    "diabetes": 1.03382,
+    "hypertension": 2.2666,
+    "heart": 3.38903,
+    "obesity": -0.05103,
+    "vegetarian": -1.208,
+    "male": -1.28534
+   },
+   "intercept": 92.8333,
+   "mean": 89.0,
+   "r2": 0.0007
+  }
+ },
+ "cohorts": {
+  "Diabetes": {
+   "n": 1019,
+   "calories": 2015,
+   "protein": 129,
+   "carbs": 244,
+   "fats": 89,
+   "planMix": {
+    "Low-Fat Diet": 0.28,
+    "Balanced Diet": 0.263,
+    "Low-Carb Diet": 0.229,
+    "High-Protein Diet": 0.229
+   }
+  },
+  "Heart Disease": {
+   "n": 749,
+   "calories": 2064,
+   "protein": 129,
+   "carbs": 243,
+   "fats": 91,
+   "planMix": {
+    "Low-Fat Diet": 0.266,
+    "High-Protein Diet": 0.259,
+    "Low-Carb Diet": 0.25,
+    "Balanced Diet": 0.226
+   }
+  },
+  "Hypertension": {
+   "n": 693,
+   "calories": 2045,
+   "protein": 129,
+   "carbs": 254,
+   "fats": 91,
+   "planMix": {
+    "Balanced Diet": 0.266,
+    "High-Protein Diet": 0.255,
+    "Low-Fat Diet": 0.241,
+    "Low-Carb Diet": 0.238
+   }
+  },
+  "None": {
+   "n": 2043,
+   "calories": 2066,
+   "protein": 129,
+   "carbs": 251,
+   "fats": 89,
+   "planMix": {
+    "Low-Fat Diet": 0.261,
+    "High-Protein Diet": 0.256,
+    "Balanced Diet": 0.245,
+    "Low-Carb Diet": 0.238
+   }
+  },
+  "Obesity": {
+   "n": 496,
+   "calories": 2005,
+   "protein": 131,
+   "carbs": 249,
+   "fats": 86,
+   "planMix": {
+    "High-Protein Diet": 0.26,
+    "Low-Fat Diet": 0.258,
+    "Balanced Diet": 0.258,
+    "Low-Carb Diet": 0.224
+   }
+  }
+ }
+}
