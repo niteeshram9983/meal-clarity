@@ -93,4 +93,5 @@ export const CONDITIONS: ConditionDef[] = [
 ];
 
 export const conditionById = (id: ConditionId): ConditionDef =>
-  CONDITIONS.find((c) => c.id === id) ?? CONDITIONS[0];
+  CONDITIONS.find((c) => c.id === id) ?? CONDITIONS[0]!;
+
