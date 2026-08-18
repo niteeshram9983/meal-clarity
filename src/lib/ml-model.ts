@@ -10,14 +10,9 @@ export interface ModelInsight {
   confidence: number;
   path: string[];
   targets: { label: string; value: number; unit: string }[];
-  cohort?: {
-    label: string;
-    n: number;
-    calories: number;
-    protein: number;
-    carbs: number;
-    fats: number;
-  };
+  cohort?:
+    | { label: string; n: number; calories: number; protein: number; carbs: number; fats: number }
+    | undefined;
   meta: {
     rows: number;
     accuracy: number;

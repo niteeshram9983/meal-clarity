@@ -26,7 +26,7 @@ export interface FlaggedFood {
   food: Food;
   reasons: string[];
   verdict: Verdict;
-  alternative?: { food: Food; why: string };
+  alternative?: { food: Food; why: string } | undefined;
 }
 
 export interface ExcludedFood {
